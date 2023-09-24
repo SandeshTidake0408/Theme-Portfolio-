@@ -117,6 +117,7 @@ body {
     letter-spacing: 1.2px;
     font-size: 0.9rem;
     color: #fff;
+    font-weight: bold;
 }
 #landing_footer a svg {
     padding-left: 1px;
@@ -264,22 +265,27 @@ body {
     font-weight: 500;
 }
 .bottom_border {
+    position: relative;
     display: inline-block;
+    padding-top: 5px;
 }
 
+/* bottom border after hover */
 .bottom_border::after {
-    content: " ";
+    content: "";
     display: block;
     transform: scaleX(0);
-    border: 1px solid #fff;
-    transform-origin: left;
+    border-bottom: 1px solid white;
+    transform-origin:right;
     transition: transform 0.5s ease;
 }
 
 .bottom_border:hover::after {
     transform: scaleX(1);
+    transform-origin: left;
 }
 
+/* arrow rotaion after hover */
 .arrow_rot:hover .bi-arrow-up-right {
     rotate: 45deg;
     transition: rotate 0.4s ease;
