@@ -420,6 +420,7 @@ body {
     }
     #main_footer .right {
         gap: 6vw;
+        flex-wrap: wrap;
     }
     #main_footer .right a {
         font-size: 0.9rem;
