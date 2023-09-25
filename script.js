@@ -1,7 +1,7 @@
 const scroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
     smooth: true,
-    fixedClass: "is-fixed",
+    multiplier: 1,
 });
 
 function landingTextAnimation() {

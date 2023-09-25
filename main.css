@@ -46,6 +46,8 @@ body {
 #navbar {
     width: 100%;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 999999;
     padding: 2rem 2.5rem;
     display: flex;
@@ -92,7 +94,7 @@ body {
 
 #slogan {
     margin-top: 7.5rem;
-    padding-right: 2.5rem;
+    padding-right: 2.5vw;
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -180,6 +182,7 @@ body {
 
 #profile_page {
     display: flex;
+    align-items: flex-start;
     justify-content: flex-end;
     flex-wrap: wrap;
     gap: 80px;
@@ -249,34 +252,37 @@ body {
 }
 #main_footer .left {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     gap: 30px;
 }
 #main_footer .left p {
     font-size: 1rem;
     font-weight: 500;
 }
+#main_footer .right {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
 #main_footer .right a {
-    padding: 0rem 1.2rem;
     text-decoration: none;
     text-transform: uppercase;
     color: #fff;
     font-size: 1rem;
     font-weight: 500;
 }
+
+/* bottom border after hover */
 .bottom_border {
-    position: relative;
     display: inline-block;
     padding-top: 5px;
 }
-
-/* bottom border after hover */
 .bottom_border::after {
     content: "";
     display: block;
     transform: scaleX(0);
     border-bottom: 1px solid white;
-    transform-origin:right;
+    transform-origin: right;
     transition: transform 0.5s ease;
 }
 
@@ -289,4 +295,134 @@ body {
 .arrow_rot:hover .bi-arrow-up-right {
     rotate: 45deg;
     transition: rotate 0.4s ease;
+}
+
+/* button hover fill animation
+ */
+
+.connect_button:hover {
+    background-color: white;
+    color: black;
+    transition: all 0.7s ease-in;
+    cursor: pointer;
+}
+/* media query */
+
+/* Add a media query for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Adjust font size for better readability on smaller screens */
+    }
+
+    #curser_circle {
+        display: none; /* Hide the cursor circle on mobile devices */
+    }
+
+    #landing_page {
+        padding-top: 150px; /* Increase top padding for the landing page content */
+    }
+
+    #navbar {
+        padding: 1.5rem 1.5rem; /* Reduce padding for the navigation bar */
+    }
+
+    #navbar a {
+        font-size: 1rem; /* Reduce font size for navigation links */
+    }
+
+    #heading {
+        margin-top: 10vw; /* Adjust margin-top for the heading */
+        padding-left: 2rem;
+    }
+
+    #heading h1 {
+        font-size: 17vw; /* Reduce font size for the heading */
+    }
+
+    #heading .second_heading {
+        padding-left: 0; /* Adjust padding for the second heading */
+    }
+    #heading .second_heading h5 {
+        margin-top: 5px;
+        font-size: 0.7rem;
+    }
+    #slogan {
+        margin-top: 5rem;
+        padding-right: 1.5rem;
+    }
+    #slogan h5 {
+        font-size: 0.7rem;
+    }
+
+    #landing_footer {
+        padding: 0rem 1.5rem;
+        margin-top: 5rem;
+    }
+    #landing_footer .arrows {
+        display: none;
+    }
+    #landing_footer a {
+        font-size: 0.7rem;
+    }
+
+    #second_page {
+        padding: 0rem 1.5rem;
+        padding-top: 9rem;
+    }
+    .content {
+        padding: 0.8rem 0rem;
+    }
+    .content h1 {
+        font-size: 13vw;
+        font-weight: 400;
+    }
+    .content h5 {
+        font-size: 0.7rem;
+        font-weight: normal;
+    }
+
+    #profile_page {
+        padding: 1rem 1.5rem 0rem 1.5rem;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    #profile_page .image {
+        width: 220px; /* Reduce image size */
+        height: 220px;
+    }
+    #profile_page .description h5 {
+        font-size: 0.8rem;
+    }
+    #profile_page .description p {
+        font-size: 0.9rem;
+        width: fit-content;
+    }
+    #profile_page .description button {
+        font-size: 0.75rem;
+    }
+    #extra {
+        padding: 2rem 1.5rem 0rem 1.5rem;
+    }
+    #extra p {
+        font-size: 0.8rem;
+    }
+    #extra a {
+        font-size: 0.7rem;
+    }
+    #main_footer {
+        padding: 7rem 1.5rem 1rem 1.5rem;
+        flex-wrap: wrap-reverse;
+        /* flex-direction: column-reverse; */
+        align-items: flex-start;
+        gap: 20px;
+        
+    }
+    #main_footer .right a {
+        font-size: 0.9rem;
+    }
+    #main_footer .left p {
+        font-size: 0.9rem;
+    }
 }
