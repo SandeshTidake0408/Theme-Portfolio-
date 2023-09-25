@@ -417,7 +417,9 @@ body {
         /* flex-direction: column-reverse; */
         align-items: flex-start;
         gap: 20px;
-        
+    }
+    #main_footer .right {
+        gap: 6vw;
     }
     #main_footer .right a {
         font-size: 0.9rem;
