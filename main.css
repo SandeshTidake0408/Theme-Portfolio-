@@ -210,7 +210,9 @@ body {
     font-size: 1rem;
     line-height: 170%;
 }
-.description button {
+.description a {
+    display: inline-block;
+    text-decoration: none;
     margin-top: 1rem;
     font-size: 1rem;
     padding: 0.2rem 1.1rem;
@@ -304,7 +306,7 @@ body {
     background-color: white;
     color: black;
     transition: all 0.7s ease-in;
-    cursor: pointer;
+
 }
 /* media query */
 
@@ -380,6 +382,10 @@ body {
         font-size: 0.7rem;
         font-weight: normal;
     }
+    #second_page img{
+        display: none;
+    }
+
 
     #profile_page {
         padding: 1rem 1.5rem 0rem 1.5rem;
@@ -399,7 +405,7 @@ body {
         font-size: 0.9rem;
         width: fit-content;
     }
-    #profile_page .description button {
+    #profile_page .description a {
         font-size: 0.75rem;
     }
     #extra {

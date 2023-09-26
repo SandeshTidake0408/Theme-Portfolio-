@@ -93,3 +93,18 @@ document.querySelectorAll(".content").forEach((element) => {
         });
     }, 200);
 });
+
+//adding time to footer
+var time = document.querySelector(".current_time");
+setInterval(() => {
+    let d = new Date();
+    time.innerHTML = d.toLocaleTimeString();
+}, 1000);
+
+//redirecting to mail application
+var mail = document.querySelector(".connect_button");
+
+// mail.addEventListener("onclick", () => {
+//     mail.
+// });
+
