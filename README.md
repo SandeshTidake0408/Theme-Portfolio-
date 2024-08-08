@@ -1,6 +1,5 @@
-# WebAwardWinnersGallery
-
-Welcome to my Web Design Awards Showcase repository! 🏆 In this project, I've meticulously coded a web application that serves as an archive for award-winning websites. As a developer, I'm passionate about web design and have created this showcase to demonstrate my skills in web development, design, and coding.
+My Portfolio Website
+Welcome to my Portfolio Website! 🌐 Here, I've carefully curated a collection of my best work, showcasing my expertise in web development, design, and coding. This portfolio is a testament to my passion for creating visually stunning and technically sound websites. Each project you see here is a reflection of my dedication to quality and innovation in web development.
 
 <a href="https://sandeshtidakeportfolio.netlify.app/">Visit Portfolio</a>
 -<p>--Sandesh Tidake</p>
