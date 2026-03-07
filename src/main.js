@@ -8,7 +8,7 @@
  *  4. Initialise animations
  */
 
-import { applyTheme } from './theme.js';
+import { applyTheme, toggleTheme } from './theme.js';
 
 import * as navbar from './modules/navbar.js';
 import * as landing from './modules/landing.js';
@@ -51,4 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initLandingAnim();
   initCursor();
   initProjectsAnim();
+
+  // 5. Theme Toggle Logic
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const isLightMode = toggleTheme();
+      themeToggle.innerText = isLightMode ? 'Dark Mode' : 'Light Mode';
+    });
+  }
 });

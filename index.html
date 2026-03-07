@@ -1,45 +1,56 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Sandesh Tidake — Software Engineer" />
-    <title>Sandesh Tidake | Software Engineer</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sandesh Tidake — Software Engineer" />
+  <title>Sandesh Tidake | Software Engineer</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./styles/locomotive.css" />
-    <link rel="stylesheet" href="./styles/main.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
 
-    <!-- GSAP (global, consumed by animation modules) -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-      integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles/locomotive.css" />
+  <link rel="stylesheet" href="./styles/main.css" />
 
-    <!-- Locomotive Scroll (global, consumed by main.js) -->
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-  </head>
+  <!-- GSAP (global, consumed by animation modules) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <body>
-    <!-- Custom cursor overlay -->
-    <div id="curser_circle" aria-hidden="true">
-      <p>View</p>
+  <!-- Locomotive Scroll (global, consumed by main.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+
+  <!-- Preload Assets -->
+  <link rel="preload" as="image"
+    href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjBmN29wcjhrMmhlaWV6b3VrdDExZmthZWU0Z3Npdm0zODJ4NjZ1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ztisqLhP99tVSHG136/giphy.gif" />
+</head>
+
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-content">
+      <img id="loader-cat"
+        src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjBmN29wcjhrMmhlaWV6b3VrdDExZmthZWU0Z3Npdm0zODJ4NjZ1dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/ztisqLhP99tVSHG136/giphy.gif"
+        alt="Spinning Cat" />
+      <h1 id="loader-text">0%</h1>
     </div>
+  </div>
+  <!-- Custom cursor overlay -->
+  <div id="curser_circle" aria-hidden="true">
+    <p>View</p>
+  </div>
 
-    <!-- App shell — all sections injected here by src/main.js -->
-    <main id="main"></main>
+  <!-- App shell — all sections injected here by src/main.js -->
+  <main id="main"></main>
 
-    <!-- App entry point (ES Module) -->
-    <script type="module" src="src/main.js"></script>
-  </body>
+  <!-- App entry point (ES Module) -->
+  <script type="module" src="src/main.js"></script>
+</body>
+
 </html>

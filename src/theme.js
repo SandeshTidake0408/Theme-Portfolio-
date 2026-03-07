@@ -5,29 +5,56 @@
  * To re-theme the entire site, only edit values in this file.
  */
 
+export const darkThemeColors = {
+  background: '#07070f',
+  surface: '#0e0e1c',
+  surfaceAlt: 'rgba(255, 255, 255, 0.03)',
+  navBg: 'rgba(7, 7, 15, 0.8)',
+  accent: '#a855f7',
+  accentSecondary: '#06b6d4',
+  accentGlow: 'rgba(168, 85, 247, 0.18)',
+  text: '#ede9fe',
+  textMuted: 'rgba(237, 233, 254, 0.55)',
+  textSubtle: 'rgba(237, 233, 254, 0.3)',
+  border: 'rgba(168, 85, 247, 0.18)',
+  borderHover: 'rgba(168, 85, 247, 0.5)',
+  cursorBg: '#a855f7',
+  cursorText: '#f8fafc',
+  buttonBg: 'transparent',
+  buttonText: '#ede9fe',
+  buttonBorder: 'rgba(168, 85, 247, 0.5)',
+  buttonHoverBg: '#a855f7',
+  buttonHoverText: '#f8fafc',
+  tagBg: 'rgba(168, 85, 247, 0.1)',
+  tagText: '#c084fc',
+};
+
+export const lightThemeColors = {
+  background: '#f8fafc',
+  surface: '#f1f5f9',
+  surfaceAlt: 'rgba(0, 0, 0, 0.03)',
+  navBg: 'rgba(248, 250, 252, 0.8)',
+  accent: '#9333ea',
+  accentSecondary: '#0284c7',
+  accentGlow: 'rgba(147, 51, 234, 0.18)',
+  text: '#0f172a',
+  textMuted: 'rgba(15, 23, 42, 0.7)',
+  textSubtle: 'rgba(15, 23, 42, 0.45)',
+  border: 'rgba(147, 51, 234, 0.2)',
+  borderHover: 'rgba(147, 51, 234, 0.5)',
+  cursorBg: '#9333ea',
+  cursorText: '#f8fafc',
+  buttonBg: 'transparent',
+  buttonText: '#0f172a',
+  buttonBorder: 'rgba(147, 51, 234, 0.4)',
+  buttonHoverBg: '#9333ea',
+  buttonHoverText: '#f8fafc',
+  tagBg: 'rgba(147, 51, 234, 0.1)',
+  tagText: '#9333ea',
+};
+
 export const theme = {
-  colors: {
-    background: '#07070f',
-    surface: '#0e0e1c',
-    surfaceAlt: 'rgba(255, 255, 255, 0.03)',
-    accent: '#a855f7',
-    accentSecondary: '#06b6d4',
-    accentGlow: 'rgba(168, 85, 247, 0.18)',
-    text: '#ede9fe',
-    textMuted: 'rgba(237, 233, 254, 0.55)',
-    textSubtle: 'rgba(237, 233, 254, 0.3)',
-    border: 'rgba(168, 85, 247, 0.18)',
-    borderHover: 'rgba(168, 85, 247, 0.5)',
-    cursorBg: '#a855f7',
-    cursorText: '#ffffff',
-    buttonBg: 'transparent',
-    buttonText: '#ede9fe',
-    buttonBorder: 'rgba(168, 85, 247, 0.5)',
-    buttonHoverBg: '#a855f7',
-    buttonHoverText: '#ffffff',
-    tagBg: 'rgba(168, 85, 247, 0.1)',
-    tagText: '#c084fc',
-  },
+  colors: darkThemeColors, // default
   fonts: {
     primary: '"Space Grotesk", "Poppins", sans-serif',
     mono: '"JetBrains Mono", "Fira Code", monospace',
@@ -36,6 +63,7 @@ export const theme = {
     accent: 'linear-gradient(135deg, #a855f7 0%, #06b6d4 100%)',
     accentReverse: 'linear-gradient(135deg, #06b6d4 0%, #a855f7 100%)',
     glow: 'radial-gradient(ellipse at 50% 0%, rgba(168, 85, 247, 0.12) 0%, transparent 70%)',
+    glowLight: 'radial-gradient(ellipse at 50% 0%, rgba(147, 51, 234, 0.08) 0%, transparent 70%)',
   },
   spacing: {
     navPaddingX: '2.5rem',
@@ -64,40 +92,46 @@ export const theme = {
   },
 };
 
+let isLightMode = false;
+
 export function applyTheme() {
   const root = document.documentElement;
   const t = theme;
+  const colors = isLightMode ? lightThemeColors : darkThemeColors;
 
   // Colors
-  root.style.setProperty('--clr-bg', t.colors.background);
-  root.style.setProperty('--clr-surface', t.colors.surface);
-  root.style.setProperty('--clr-surface-alt', t.colors.surfaceAlt);
-  root.style.setProperty('--clr-accent', t.colors.accent);
-  root.style.setProperty('--clr-accent-2', t.colors.accentSecondary);
-  root.style.setProperty('--clr-accent-glow', t.colors.accentGlow);
-  root.style.setProperty('--clr-text', t.colors.text);
-  root.style.setProperty('--clr-text-muted', t.colors.textMuted);
-  root.style.setProperty('--clr-text-subtle', t.colors.textSubtle);
-  root.style.setProperty('--clr-border', t.colors.border);
-  root.style.setProperty('--clr-border-hover', t.colors.borderHover);
-  root.style.setProperty('--clr-cursor-bg', t.colors.cursorBg);
-  root.style.setProperty('--clr-cursor-text', t.colors.cursorText);
-  root.style.setProperty('--clr-btn-bg', t.colors.buttonBg);
-  root.style.setProperty('--clr-btn-text', t.colors.buttonText);
-  root.style.setProperty('--clr-btn-border', t.colors.buttonBorder);
-  root.style.setProperty('--clr-btn-hover-bg', t.colors.buttonHoverBg);
-  root.style.setProperty('--clr-btn-hover-text', t.colors.buttonHoverText);
-  root.style.setProperty('--clr-tag-bg', t.colors.tagBg);
-  root.style.setProperty('--clr-tag-text', t.colors.tagText);
+  root.style.setProperty('--clr-bg', colors.background);
+  root.style.setProperty('--clr-nav-bg', colors.navBg);
+  root.style.setProperty('--clr-surface', colors.surface);
+  root.style.setProperty('--clr-surface-alt', colors.surfaceAlt);
+  root.style.setProperty('--clr-accent', colors.accent);
+  root.style.setProperty('--clr-accent-2', colors.accentSecondary);
+  root.style.setProperty('--clr-accent-glow', colors.accentGlow);
+  root.style.setProperty('--clr-text', colors.text);
+  root.style.setProperty('--clr-text-muted', colors.textMuted);
+  root.style.setProperty('--clr-text-subtle', colors.textSubtle);
+  root.style.setProperty('--clr-border', colors.border);
+  root.style.setProperty('--clr-border-hover', colors.borderHover);
+  root.style.setProperty('--clr-cursor-bg', colors.cursorBg);
+  root.style.setProperty('--clr-cursor-text', colors.cursorText);
+  root.style.setProperty('--clr-btn-bg', colors.buttonBg);
+  root.style.setProperty('--clr-btn-text', colors.buttonText);
+  root.style.setProperty('--clr-btn-border', colors.buttonBorder);
+  root.style.setProperty('--clr-btn-hover-bg', colors.buttonHoverBg);
+  root.style.setProperty('--clr-btn-hover-text', colors.buttonHoverText);
+  root.style.setProperty('--clr-tag-bg', colors.tagBg);
+  root.style.setProperty('--clr-tag-text', colors.tagText);
 
   // Fonts
   root.style.setProperty('--font-primary', t.fonts.primary);
   root.style.setProperty('--font-mono', t.fonts.mono);
 
   // Gradients
-  root.style.setProperty('--gradient-accent', t.gradients.accent);
-  root.style.setProperty('--gradient-accent-rev', t.gradients.accentReverse);
-  root.style.setProperty('--gradient-glow', t.gradients.glow);
+  const accent1 = colors.accent;
+  const accent2 = colors.accentSecondary;
+  root.style.setProperty('--gradient-accent', `linear-gradient(135deg, ${accent1} 0%, ${accent2} 100%)`);
+  root.style.setProperty('--gradient-accent-rev', `linear-gradient(135deg, ${accent2} 0%, ${accent1} 100%)`);
+  root.style.setProperty('--gradient-glow', isLightMode ? t.gradients.glowLight : t.gradients.glow);
 
   // Spacing
   root.style.setProperty('--spacing-nav-x', t.spacing.navPaddingX);
@@ -122,4 +156,13 @@ export function applyTheme() {
   root.style.setProperty('--radius-circle', t.radii.circle);
   root.style.setProperty('--radius-card', t.radii.card);
   root.style.setProperty('--radius-tag', t.radii.tag);
+
+  // Transition background on body to make theme toggle smooth
+  document.body.style.transition = 'background-color 0.4s ease, color 0.4s ease';
+}
+
+export function toggleTheme() {
+  isLightMode = !isLightMode;
+  applyTheme();
+  return isLightMode;
 }

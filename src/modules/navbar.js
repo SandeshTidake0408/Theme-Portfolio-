@@ -5,7 +5,10 @@
 export const navbarHTML = `
   <div id="navbar" data-scroll data-scroll-sticky data-scroll-target="#main">
     <a href="/">Sandesh Tidake</a>
-    <p class="bottom_border">Menu+</p>
+    <div style="display: flex; gap: 1.5rem; align-items: center;">
+      <p id="theme-toggle" class="bottom_border">Light Mode</p>
+      <p class="bottom_border">Menu+</p>
+    </div>
   </div>
 `;
 
