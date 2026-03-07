@@ -44,8 +44,8 @@ export const landingHTML = `
       </div>
       <div id="wrapper">
         <div class="arrows">
-          <img class="wrap_content arrow_move" src="./icons/arrow-up.svg" alt="Scroll Down">
-          <img class="wrap_content arrow_move" src="./icons/arrow-up.svg" alt="Scroll Down">
+          <img class="wrap_content arrow_move" src="./assets/arrow-up.svg" alt="Scroll Down">
+          <img class="wrap_content arrow_move" src="./assets/arrow-up.svg" alt="Scroll Down">
         </div>
       </div>
     </div>
