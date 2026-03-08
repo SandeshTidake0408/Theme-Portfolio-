@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Mount all sections
   const main = document.querySelector('#main');
-  navbar.mount(main);
+  navbar.mount(document.body); // Still mounts at start but outside main
   landing.mount(main);
   projects.mount(main);
   skills.mount(main);

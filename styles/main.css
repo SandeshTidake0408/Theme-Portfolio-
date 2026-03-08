@@ -263,6 +263,64 @@ body::before {
   letter-spacing: 0.05em;
 }
 
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: var(--clr-surface-alt);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.ai-badge-text {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-accent);
+  position: relative;
+  z-index: 2;
+}
+
+.ai-badge-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(168, 85, 247, 0.2),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 200%;
+  }
+}
+
 .hero-line {
   text-transform: uppercase;
   font-size: clamp(3.5rem, 11vw, 10rem);

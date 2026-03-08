@@ -20,6 +20,12 @@ export const landingHTML = `
         <h1 class="wrap_content hero-line gradient-text">Engineer.</h1>
       </div>
       <div id="wrapper">
+        <div class="wrap_content ai-badge">
+          <span class="ai-badge-text">🔥 10x Engineering — built diff fr ⚡️</span>
+          <span class="ai-badge-glow"></span>
+        </div>
+      </div>
+      <div id="wrapper">
         <p class="wrap_content hero-sub">crafting fast, beautiful digital experiences — based in India 🇮🇳</p>
       </div>
       <div class="hero-ctas">

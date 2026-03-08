@@ -3,7 +3,7 @@
  */
 
 export const navbarHTML = `
-  <div id="navbar" data-scroll data-scroll-sticky data-scroll-target="#main">
+  <div id="navbar">
     <a href="/">Sandesh Tidake</a>
     <div style="display: flex; gap: 1.5rem; align-items: center;">
       <p id="theme-toggle" class="bottom_border">Light Mode</p>
